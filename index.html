@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Rana</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    .hidden {
+      display: none;
+    }
+    .btn {
+      margin-top: 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+    iframe {
+      width: 90%;
+      max-width: 500px;
+      height: 300px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Happiee Birthday Ranaaaa✨</h1>
+  <div id="step1">
+    <div class="btn" onclick="playFirstVideo()">dare to click</div>
+  </div>  <div id="videoContainer" class="hidden">
+    <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+  </div>  <div id="step2" class="hidden">
+    <div class="btn" onclick="playSecondVideo()">click me quick</div>
+  </div>  <div id="step3" class="hidden">
+    <div class="btn" onclick="showMessageAndPlayLast()">last one please watch this tooo meow</div>
+  </div>  <div id="message" class="hidden">
+    <h2>I'll savadengifyy you like this 😏🦫</h2>
+  </div>  <script>
+    function playFirstVideo() {
+      document.getElementById('step1').classList.add('hidden');
+      const iframe = document.getElementById('videoFrame');
+      iframe.src = "https://www.youtube.com/embed/S8z57UyxQOQ?autoplay=1";
+      document.getElementById('videoContainer').classList.remove('hidden');
+      // Wait ~30s then show next button
+      setTimeout(() => {
+        document.getElementById('step2').classList.remove('hidden');
+      }, 30000);
+    }
+
+    function playSecondVideo() {
+      document.getElementById('step2').classList.add('hidden');
+      const iframe = document.getElementById('videoFrame');
+      iframe.src = "https://www.instagram.com/reel/DFP-TaENbgD/embed";
+      // Wait ~30s then show next button
+      setTimeout(() => {
+        document.getElementById('step3').classList.remove('hidden');
+      }, 30000);
+    }
+
+    function showMessageAndPlayLast() {
+      document.getElementById('step3').classList.add('hidden');
+      document.getElementById('message').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('message').classList.add('hidden');
+        const iframe = document.getElementById('videoFrame');
+        iframe.src = "https://www.instagram.com/reel/CrDdFYqJhl4/embed";
+      }, 5000);
+    }
+  </script></body>
+</html>
